@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/cornut/Documents/Cacao/Mesures/Capteurs/Soil_moist/CS616/CS616.kicad_sch</source>
+    <date>dim. 27 août 2023 17:07:54</date>
+    <tool>Eeschema 7.0.7-7.0.7~ubuntu22.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>CS616.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="Alim12V1">
+      <value>Screw_Terminal_01x02</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Screw_Terminal_01x02" description="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="screw terminal"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6cc6d219-1e16-4639-b99d-7d6a8fb32445</tstamps>
+    </comp>
+    <comp ref="BornierEnable1">
+      <value>Screw_Terminal_01x08</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Screw_Terminal_01x08" description="Generic screw terminal, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Generic screw terminal, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="screw terminal"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>81c18351-7475-4c8b-8aca-31164b8b78cc</tstamps>
+    </comp>
+    <comp ref="BornierSignal1">
+      <value>Screw_Terminal_01x08</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x08_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Screw_Terminal_01x08" description="Generic screw terminal, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Generic screw terminal, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="screw terminal"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cf4d75c0-8c6e-4714-9793-74e9b4f7c8fe</tstamps>
+    </comp>
+    <comp ref="C1">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1e94fd1e-9b07-4d55-a6e6-0c5ff1ee580d</tstamps>
+    </comp>
+    <comp ref="F1">
+      <value>Fuse_Small</value>
+      <footprint>LM311P:Microfuse</footprint>
+      <libsource lib="Device" part="Fuse_Small" description="Fuse, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Fuse, small symbol"/>
+      <property name="ki_keywords" value="fuse"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>149a5c64-de93-4d62-ad6f-ca7cc143c349</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Screw_Terminal_01x06</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_1x06_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector" part="Screw_Terminal_01x06" description="Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="screw terminal"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a5d10c85-c45a-4106-aefd-b758c7fbdaac</tstamps>
+    </comp>
+    <comp ref="Pull-up1">
+      <value>20k</value>
+      <footprint>Resistor_SMD:R_1206_3216Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e8981c15-119a-4496-8cc5-c2b11bcc3c9e</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>6.7k</value>
+      <footprint>Resistor_SMD:R_1206_3216Metric</footprint>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Resistor"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8ca49730-0d21-477c-a7cc-9a63d3ec66de</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>LM311</value>
+      <footprint>LM311P:DIP794W45P254L959H508Q8</footprint>
+      <datasheet>https://www.st.com/resource/en/datasheet/lm311.pdf</datasheet>
+      <libsource lib="Comparator" part="LM311" description="Voltage Comparator, DIP-8/SOIC-8"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="Voltage Comparator, DIP-8/SOIC-8"/>
+      <property name="ki_keywords" value="cmp open collector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1cb9b3f2-7366-46d7-b4f6-2c9bbecdae1c</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>CD4051B</value>
+      <footprint>CD4051BE:DIP794W45P254L1969H508Q16</footprint>
+      <datasheet>http://www.ti.com/lit/ds/symlink/cd4052b.pdf</datasheet>
+      <libsource lib="Analog_Switch" part="CD4051B" description="CMOS single 8-channel analog multiplexer demultiplexer, TSSOP-16/DIP-16/SOIC-16"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="CS616.kicad_sch"/>
+      <property name="ki_description" value="CMOS single 8-channel analog multiplexer demultiplexer, TSSOP-16/DIP-16/SOIC-16"/>
+      <property name="ki_keywords" value="analog switch selector multiplexer"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e727034b-4673-40a3-b9ba-ae2a0032e7e7</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Analog_Switch" part="CD4051B">
+      <description>CMOS single 8-channel analog multiplexer demultiplexer, TSSOP-16/DIP-16/SOIC-16</description>
+      <docs>http://www.ti.com/lit/ds/symlink/cd4052b.pdf</docs>
+      <footprints>
+        <fp>TSSOP*4.4x5mm*P0.65mm*</fp>
+        <fp>DIP*W7.62*</fp>
+        <fp>SOIC*3.9x9.9mm*P1.27mm*</fp>
+        <fp>SO*5.3x10.2mm*P1.27mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">CD4051B</field>
+        <field name="Datasheet">http://www.ti.com/lit/ds/symlink/cd4052b.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="X4" type="bidirectional"/>
+        <pin num="2" name="X6" type="bidirectional"/>
+        <pin num="3" name="X" type="bidirectional"/>
+        <pin num="4" name="X7" type="bidirectional"/>
+        <pin num="5" name="X5" type="bidirectional"/>
+        <pin num="6" name="INH" type="input"/>
+        <pin num="7" name="VEE" type="power_in"/>
+        <pin num="8" name="VSS" type="power_in"/>
+        <pin num="9" name="C" type="input"/>
+        <pin num="10" name="B" type="input"/>
+        <pin num="11" name="A" type="input"/>
+        <pin num="12" name="X3" type="bidirectional"/>
+        <pin num="13" name="X0" type="bidirectional"/>
+        <pin num="14" name="X1" type="bidirectional"/>
+        <pin num="15" name="X2" type="bidirectional"/>
+        <pin num="16" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Comparator" part="LM311">
+      <description>Voltage Comparator, DIP-8/SOIC-8</description>
+      <docs>https://www.st.com/resource/en/datasheet/lm311.pdf</docs>
+      <footprints>
+        <fp>SOIC*3.9x4.9mm*P1.27mm*</fp>
+        <fp>DIP*W7.62mm*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM311</field>
+        <field name="Datasheet">https://www.st.com/resource/en/datasheet/lm311.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="passive"/>
+        <pin num="2" name="+" type="input"/>
+        <pin num="3" name="-" type="input"/>
+        <pin num="4" name="V-" type="power_in"/>
+        <pin num="5" name="BAL" type="input"/>
+        <pin num="6" name="STRB" type="input"/>
+        <pin num="7" name="" type="open_collector"/>
+        <pin num="8" name="V+" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Screw_Terminal_01x02">
+      <description>Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TerminalBlock*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Screw_Terminal_01x02</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Screw_Terminal_01x06">
+      <description>Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TerminalBlock*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Screw_Terminal_01x06</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Screw_Terminal_01x08">
+      <description>Generic screw terminal, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TerminalBlock*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Screw_Terminal_01x08</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Fuse_Small">
+      <description>Fuse, small symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>*Fuse*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">F</field>
+        <field name="Value">Fuse_Small</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Analog_Switch">
+      <uri>/usr/share/kicad/symbols//Analog_Switch.kicad_sym</uri>
+    </library>
+    <library logical="Comparator">
+      <uri>/usr/share/kicad/symbols//Comparator.kicad_sym</uri>
+    </library>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/symbols//Connector.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/symbols//Device.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+5V">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="Pull-up1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="8" pinfunction="V+" pintype="power_in"/>
+      <node ref="U2" pin="16" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="2" name="+12V">
+      <node ref="F1" pin="1" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="X" pintype="bidirectional"/>
+    </net>
+    <net code="3" name="GND">
+      <node ref="Alim12V1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="GND" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="+" pintype="input"/>
+      <node ref="U1" pin="4" pinfunction="V-" pintype="power_in"/>
+      <node ref="U2" pin="6" pinfunction="INH" pintype="input"/>
+      <node ref="U2" pin="7" pinfunction="VEE" pintype="power_in"/>
+      <node ref="U2" pin="8" pinfunction="VSS" pintype="power_in"/>
+    </net>
+    <net code="4" name="Net-(Alim12V1-Pin_1)">
+      <node ref="Alim12V1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="F1" pin="2" pintype="passive"/>
+    </net>
+    <net code="5" name="Net-(BornierEnable1-Pin_1)">
+      <node ref="BornierEnable1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U2" pin="13" pinfunction="X0" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="Net-(BornierEnable1-Pin_2)">
+      <node ref="BornierEnable1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U2" pin="14" pinfunction="X1" pintype="bidirectional"/>
+    </net>
+    <net code="7" name="Net-(BornierEnable1-Pin_3)">
+      <node ref="BornierEnable1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U2" pin="15" pinfunction="X2" pintype="bidirectional"/>
+    </net>
+    <net code="8" name="Net-(BornierEnable1-Pin_4)">
+      <node ref="BornierEnable1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U2" pin="12" pinfunction="X3" pintype="bidirectional"/>
+    </net>
+    <net code="9" name="Net-(BornierEnable1-Pin_5)">
+      <node ref="BornierEnable1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U2" pin="1" pinfunction="X4" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="Net-(BornierEnable1-Pin_6)">
+      <node ref="BornierEnable1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="X5" pintype="bidirectional"/>
+    </net>
+    <net code="11" name="Net-(BornierEnable1-Pin_7)">
+      <node ref="BornierEnable1" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="U2" pin="2" pinfunction="X6" pintype="bidirectional"/>
+    </net>
+    <net code="12" name="Net-(BornierEnable1-Pin_8)">
+      <node ref="BornierEnable1" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="X7" pintype="bidirectional"/>
+    </net>
+    <net code="13" name="Net-(BornierSignal1-Pin_1)">
+      <node ref="BornierSignal1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="BornierSignal1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="BornierSignal1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="BornierSignal1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="BornierSignal1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="BornierSignal1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="BornierSignal1" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="BornierSignal1" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="-" pintype="input"/>
+    </net>
+    <net code="14" name="Net-(J1-Pin_3)">
+      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="U2" pin="11" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="15" name="Net-(J1-Pin_4)">
+      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U2" pin="10" pinfunction="B" pintype="input"/>
+    </net>
+    <net code="16" name="Net-(J1-Pin_5)">
+      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="U2" pin="9" pinfunction="C" pintype="input"/>
+    </net>
+    <net code="17" name="Net-(J1-Pin_6)">
+      <node ref="J1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+    </net>
+    <net code="18" name="Net-(Pull-up1-Pad2)">
+      <node ref="Pull-up1" pin="2" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="7" pintype="open_collector"/>
+    </net>
+    <net code="19" name="Net-(U1-BAL)">
+      <node ref="U1" pin="5" pinfunction="BAL" pintype="input"/>
+      <node ref="U1" pin="6" pinfunction="STRB" pintype="input"/>
+    </net>
+  </nets>
+</export>
