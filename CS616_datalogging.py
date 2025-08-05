@@ -1,5 +1,5 @@
 from counter import PWMCounter
-from machine import Pin, PWM, Timer,I2C,lightsleep
+from machine import Pin, PWM, Timer,I2C,lightsleep,WDT, idle
 from time import ticks_ms, ticks_diff, sleep, ticks_us
 import urtc
 import sdcard
@@ -14,7 +14,7 @@ class logger():
         cs = Pin(17,Pin.OUT)
         spi = machine.SPI(0, baudrate=1000000,polarity=0,phase=0,bits=8,firstbit=machine.SPI.MSB,sck=Pin(18),mosi=Pin(19),miso=Pin(16))
         self.sd = sdcard.SDCard(spi, cs)
-        self.filsys = vfs.VfsFat(sd)
+        self.filsys = vfs.VfsFat(self.sd)
         vfs.mount(self.filsys, "/sd")
         self.var_names = column_names
         self.rtc = rtc_clock
@@ -27,12 +27,11 @@ class logger():
             os.stat(self.filename) 
         except:
             with open(self.filename,'a') as f:
-                first = True
+                f.write("DateTime")
                 for name in self.var_names:
-                    if not first:
-                        f.write(",")
+                    f.write(",")
                     f.write(name)
-                    first = False
+                f.write("\n")
         
         with open(self.filename,'a') as f:
             now = self.rtc.datetime()
@@ -41,20 +40,24 @@ class logger():
                 f.write(",")
                 f.write("%1.2f" % val)
             f.write("\n")
+            print('Done with writing_to_file')
             
 class datalogger_cs616:
     
-    def __init__(self,meas_pin = 21,timestep=15,number_cs616=8,CS616=True,test=True): 
+    def __init__(self,meas_pin = 13,timestep=15,number_cs616=8,CS616=True,test=True): 
         #self.enable_Pins_addr = [6,7,8,9,10,11,12,13] # the GPIO of pins for enabling CS616
         self.timestep = timestep
         self.number = number_cs616
         self.proto = test
         
-        self.enable_control = CD4051.CD4051(6,7,8)
+        self.enable_Pin = Pin(14,Pin.OUT) # Pin to enable sensors with 5V
+        self.enable_Pin.value(0)
+        
+        self.enable_control = CD4051.CD4051(7,8,9)
         self.signal_control = CD4051.CD4051(10,11,20)
         
         if not self.proto:
-            i2c_clock = I2C(0,scl=Pin(5), sda=Pin(4))
+            self.i2c_clock = I2C(0,scl=Pin(5), sda=Pin(4))
             self.rtc = urtc.PCF8523(self.i2c_clock)
         
             col_names = []
@@ -67,6 +70,8 @@ class datalogger_cs616:
         self.pin_counter = PWMCounter(meas_pin, PWMCounter.EDGE_RISING)
         self.pin_counter.set_div() # Set divisor to 1 (just in case)
         self.pin_counter.start() # Start counter
+        
+        self.watchdog = WDT(timeout=8000)
     
     def _cs616_measure(self):
         sampling_time = 100000
@@ -93,6 +98,7 @@ class datalogger_cs616:
     
     def _meas_sequence(self):
         self.data_values = []
+        self.enable_Pin.value(1)
         for i in range(0,self.number):
             print(i)
             self.enable_control.set_output(i)
@@ -117,21 +123,30 @@ class datalogger_cs616:
             
             self.data_values.append(value_1)
             self.data_values.append(value_2)
-            sleep(1)       
-        
+            self.watchdog.feed()
+            sleep(0.25)
+        self.enable_Pin.value(0)
+    
     def run(self):
-        print("yes1")
         while True:
             if self.proto:
                 print("hello")
                 self._meas_sequence()
+                self.watchdog.feed()
                 sleep(2)
             else:
                 now = self.rtc.datetime()
-                if (now.minute%timestep) == 0:
+                if (now.minute%self.timestep) == 0:
                     self._meas_sequence()
                     self.Logging.save_data(self.data_values)
-                    lightsleep(60000)
-                lightsleep(20000)  
-Datalogger = datalogger_cs616()
+                    print("done saving data")
+                    self.watchdog.feed()
+                    for i in range(0,10):
+                        sleep(6)
+                        self.watchdog.feed()
+                sleep(6)
+                self.watchdog.feed()
+            #idle()
+sleep(5)
+Datalogger = datalogger_cs616(meas_pin=13,timestep=2,number_cs616=8,CS616=True,test=False)
 Datalogger.run()
