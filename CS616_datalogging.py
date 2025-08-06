@@ -60,7 +60,7 @@ class datalogger_cs616:
         self.enable_Pin.value(0)
         
         self.enable_control = CD4051.CD4051(7,8,9) # control of the first CD4051 switch
-        self.signal_control = CD4051.CD4051(10,11,20) # control of the second CD4051 switch
+        self.signal_control = CD4051.CD4051(10,11,12) # control of the second CD4051 switch
         
         if not self.proto:
             # intitialise i2C for urtc clock on Pi Cowbell datalogger shield
@@ -123,7 +123,7 @@ class datalogger_cs616:
             print(i)
             self.enable_control.set_output(i)
             self.signal_control.set_output(i)
-            sleep(1) # just wait for it to turn on
+            sleep(2) # just wait for it to turn on
             if not self.proto:
                 try:
                     value_1 = self._cs616_measure() # Measure frequency
@@ -145,14 +145,14 @@ class datalogger_cs616:
             self.data_values.append(value_2)
             self.watchdog.feed()
             self.led.value(1)
-            sleep(0.25)
+            sleep(0.1)
             self.led.value(0)
         self.enable_Pin.value(0)
     
     def run(self):
         while True:
             if self.proto:
-                print("hello")
+                print("This is prototyping")
                 self._meas_sequence()
                 self.watchdog.feed()
                 sleep(2)
@@ -161,7 +161,7 @@ class datalogger_cs616:
                 if (now.minute%self.timestep) == 0:
                     self._meas_sequence()
                     self.Logging.save_data(self.data_values)
-                    print("done saving data")
+                    print("Done saving data")
                     self.watchdog.feed()
                     for i in range(0,10):
                         sleep(5.75)
@@ -172,10 +172,10 @@ class datalogger_cs616:
                 sleep(5.75)
                 self.watchdog.feed()
                 self.led.value(1)
-                sleep(0.25)
+                sleep(0.1)
                 self.led.value(0)
             #idle()
 
-sleep(5) # just some time so usb can connect before the program is launched
-Datalogger = datalogger_cs616(meas_pin=13,timestep=2,number_cs616=8,CS616=True,test=False)
+sleep(10) # just some time so usb can connect before the program is launched
+Datalogger = datalogger_cs616(meas_pin=13,timestep=10,number_cs616=8,CS616=True,test=False)
 Datalogger.run()
