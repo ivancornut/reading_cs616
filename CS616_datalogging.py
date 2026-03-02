@@ -18,7 +18,7 @@ class logger():
         spi = machine.SPI(0, baudrate=1000000,polarity=0,phase=0,bits=8,firstbit=machine.SPI.MSB,sck=Pin(18),mosi=Pin(19),miso=Pin(16))
         self.sd = sdcard.SDCard(spi, cs)
         self.filsys = vfs.VfsFat(self.sd)
-        vfs.mount(self.filsys, "/sd") # mount the SD card
+        #vfs.mount(self.filsys, "/sd") # mount the SD card
         
         self.var_names = column_names # names of the columns in csv files
         self.rtc = rtc_clock
@@ -33,7 +33,10 @@ class logger():
             self.timestep = int(config["timestep"])
         except:
             self.file_prefix = "data"
-    
+        with open('logs.txt','a') as f:
+            now = self.rtc.datetime() # check date
+            f.write(f"restarted at {now.day,now.hour,now.minute}\n")
+            
     def read_battery_voltage(self):
         sensor_value = 0
         for i in range(0,10):
@@ -55,6 +58,7 @@ class logger():
             self.battery_SOC = 0.0
 
     def save_data(self,data=[0,9,99,999]):
+        vfs.mount(self.filsys, "/sd") # mount the SD card
         now = self.rtc.datetime() # check date
         # the device creates a new file every day this is easier to handle. 
         self.filename = "/sd/"+self.file_prefix+'_'+str(now.year)+"-"+str(now.month)+"-"+str(now.day)+".csv"
@@ -82,7 +86,7 @@ class logger():
                 f.write("%1.4f" % val)
             f.write("\n")
             print('Done with writing_to_file')
-            
+        vfs.umount("/sd") # unmount the SD card    
 class datalogger_cs616:
     
     def __init__(self,meas_pin = 13,timestep=15,number_cs616=8,CS616=True,test=True): 
@@ -151,7 +155,10 @@ class datalogger_cs616:
                     freq = self.pin_counter.read_and_reset() / (sampling_time / 1000000)
                     mean_freq = mean_freq + (freq)/10
                     cond = False
-        period = 1/mean_freq * 1000000 # in us
+        try:
+            period = 1/mean_freq * 1000000 # in us
+        except:
+            period = 9999
         print(period,mean_freq)
         return period
     
@@ -162,12 +169,12 @@ class datalogger_cs616:
     
     def _meas_sequence(self):
         self.data_values = []
-        self.enable_Pin.value(1)
+        
         for i in range(0,self.number):
-            print(i)
             self.enable_control.set_output(i)
             self.signal_control.set_output(i)
-            sleep(2) # just wait for it to turn on
+            self.enable_Pin.value(1)
+            sleep(0.5) # just wait for it to turn on
             if not self.proto:
                 try:
                     value_1 = self._cs616_measure() # Measure frequency
@@ -184,14 +191,15 @@ class datalogger_cs616:
                 except:
                     value_1 = 999.9
                     value_2 = 999.9
-            
+            self.enable_Pin.value(0)
             self.data_values.append(value_1)
             self.data_values.append(value_2)
             self.watchdog.feed()
             self.led.value(1)
             sleep(0.1)
             self.led.value(0)
-        self.enable_Pin.value(0)
+        self.enable_control.set_output(0) # puts all pins to 0
+        self.signal_control.set_output(0) # puts all pins to 0
     
     def run(self):
         self._hello()
@@ -208,12 +216,14 @@ class datalogger_cs616:
                     self.Logging.save_data(self.data_values)
                     print("Done saving data")
                     self.watchdog.feed()
-                    for i in range(0,30):
+                    for i in range(0,10):
+                        self.enable_Pin.value(0)
                         lightsleep(5750)
                         self.watchdog.feed()
                         self.led.value(1)
                         sleep(0.05)
                         self.led.value(0)
+                self.enable_Pin.value(0)
                 lightsleep(5750)
                 self.watchdog.feed()
                 self.led.value(1)

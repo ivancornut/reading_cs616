@@ -1,0 +1,25 @@
+Info: Fini.
+Info: Fini.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Paste.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Paste.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Paste.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Silkscreen.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Silkscreen.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Mask.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Mask.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-Edge_Cuts.gbr'.
+Création du fichier Gerber "job" '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-job.gbrjob'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Cu.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Cu.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Paste.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Silkscreen.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Silkscreen.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Mask.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-B_Mask.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-Edge_Cuts.gbr'.
+Création du fichier Gerber "job" '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-job.gbrjob'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Cu.gbr'.
+Tracé en '/home/cornut/Documents/dev_capteurs/reading_cs616/PCB/CS616_reader/Gerber_files/CS616_reader-F_Cu.gbr'.
+Attention: Correction de largeur. La valeur de correction doit être dans la plage  [0,000001 mm; 0,199999 mm]  pour les règles actuelles de conception.
+Info: Fini.
+Info: Fini.
