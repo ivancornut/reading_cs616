@@ -1,3 +1,4 @@
+![Multiplexer](CS616_reader.png)
 # Reading CS616
 
 The CS616 is a moisture sensor from Campbell. It measures the soil moisture using the TDR (Time domain relfectometry) technique. 
